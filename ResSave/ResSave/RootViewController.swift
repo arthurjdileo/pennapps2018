@@ -5,18 +5,41 @@
 //  Created by Gregory on 9/7/18.
 //  Copyright © 2018 Gregory. All rights reserved.
 //
-
 import UIKit
+import CoreLocation
+import MapKit
 
-class RootViewController: UIViewController, UIPageViewControllerDelegate {
+let Userdef = UserDefaults.standard
 
+
+
+class RootViewController: UIViewController, UIPageViewControllerDelegate, CLLocationManagerDelegate {
+    var locationManager:CLLocationManager!
     var pageViewController: UIPageViewController?
-
-
+    func determineMyCurrentLocation() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+            //locationManager.startUpdatingHeading()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        // Configure the page view controller and add it as a child view controller.
+        
+        //Load crap
+        determineMyCurrentLocation();
+        var loc = locationManager.location?.coordinate
+        Userdef.set(loc?.latitude, forKey: "gplat")
+        Userdef.set(loc?.longitude, forKey: "gplog")
+        print(loc?.longitude)
+        print(loc?.latitude)
+        
+        
         self.pageViewController = UIPageViewController(transitionStyle: .pageCurl, navigationOrientation: .horizontal, options: nil)
         self.pageViewController!.delegate = self
 
