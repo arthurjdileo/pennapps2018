@@ -18,7 +18,7 @@ class DataViewController: UIViewController {
     
     @IBOutlet weak var pressed: UIButton!
     
-    
+    @IBOutlet weak var txt2: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,16 +28,19 @@ class DataViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.dataLabel!.text = dataObject
+       
     }
 
     @IBAction func execPanic(_ sender: Any) {
         super.viewDidLoad()
         
-        print("panic time!")
+        
+       
+        var name = Userdef.string(forKey: "name")!
         var lat = Userdef.object(forKey: "gplat")!
         var log = Userdef.object(forKey: "gplog")!
-        var msg = "test \(lat) hi \(log)"
-        
+        var msg = "\(name) lives at \(lat) \(log)"
+
         let test = [msg]
         let activity = UIActivityViewController(activityItems: test, applicationActivities: nil)
         let excludedActivities = [UIActivity.ActivityType.postToFlickr, UIActivity.ActivityType.postToVimeo, UIActivity.ActivityType.postToWeibo, UIActivity.ActivityType.postToTwitter, UIActivity.ActivityType.postToFacebook, UIActivity.ActivityType.addToReadingList, UIActivity.ActivityType.copyToPasteboard, UIActivity.ActivityType.mail, UIActivity.ActivityType.message, UIActivity.ActivityType.openInIBooks, UIActivity.ActivityType.print]
