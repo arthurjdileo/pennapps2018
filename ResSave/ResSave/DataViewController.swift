@@ -9,7 +9,7 @@
 import UIKit
 
 class DataViewController: UIViewController {
-
+    let Userdef = UserDefaults.standard
     @IBOutlet var medview: UIView!
     @IBOutlet weak var dataLabel: UILabel!
     var dataObject: String = ""
@@ -32,7 +32,13 @@ class DataViewController: UIViewController {
 
     @IBAction func execPanic(_ sender: Any) {
         super.viewDidLoad()
-        let test = ["test1234"]
+        
+        print("panic time!")
+        var lat = Userdef.object(forKey: "gplat")!
+        var log = Userdef.object(forKey: "gplog")!
+        var msg = "test \(lat) hi \(log)"
+        
+        let test = [msg]
         let activity = UIActivityViewController(activityItems: test, applicationActivities: nil)
         let excludedActivities = [UIActivity.ActivityType.postToFlickr, UIActivity.ActivityType.postToVimeo, UIActivity.ActivityType.postToWeibo, UIActivity.ActivityType.postToTwitter, UIActivity.ActivityType.postToFacebook, UIActivity.ActivityType.addToReadingList, UIActivity.ActivityType.copyToPasteboard, UIActivity.ActivityType.mail, UIActivity.ActivityType.message, UIActivity.ActivityType.openInIBooks, UIActivity.ActivityType.print]
         activity.excludedActivityTypes = excludedActivities

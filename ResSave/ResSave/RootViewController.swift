@@ -11,8 +11,6 @@ import MapKit
 
 let Userdef = UserDefaults.standard
 
-
-
 class RootViewController: UIViewController, UIPageViewControllerDelegate, CLLocationManagerDelegate {
     var locationManager:CLLocationManager!
     var pageViewController: UIPageViewController?
@@ -35,10 +33,11 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, CLLoca
         //Load crap
         determineMyCurrentLocation();
         var loc = locationManager.location?.coordinate
-        Userdef.set(loc?.latitude, forKey: "gplat")
-        Userdef.set(loc?.longitude, forKey: "gplog")
-        print(loc?.longitude)
-        print(loc?.latitude)
+        Userdef.set(loc!.latitude, forKey: "gplat")
+        Userdef.set(loc!.longitude, forKey: "gplog")
+        print(Userdef.object(forKey: "gplat")!)
+        print(Userdef.object(forKey: "gplog")!)
+        Userdef.synchronize()
         
         
         self.pageViewController = UIPageViewController(transitionStyle: .pageCurl, navigationOrientation: .horizontal, options: nil)
