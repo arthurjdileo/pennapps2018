@@ -173,7 +173,7 @@
                         <outlet property="med" destination="OFb-5Z-Ss2" id="ewT-vB-9bL"/>
                         <outlet property="name" destination="KZO-eN-3eA" id="PPb-sV-hOa"/>
                         <outlet property="notes" destination="hUn-qA-EEK" id="0bf-ZH-195"/>
-                        <outlet property="sub" destination="4s7-h6-8cX" id="pEn-CS-8R0"/>
+                        <outlet property="view" destination="4s7-h6-8cX" id="kXP-9e-GJL"/>
                         <outlet property="wei" destination="suc-7Y-bfT" id="QUq-I5-hHY"/>
                     </connections>
                 </viewController>

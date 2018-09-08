@@ -38,7 +38,7 @@ class MedViewController: UIViewController {
 
     }
     
-    @IBAction func executePanic(_ sender: Any) {
+    @IBAction func subbed(_ sender: Any) {
         var namestring = name.text
         Userdef.set(namestring!, forKey: "name")
         
