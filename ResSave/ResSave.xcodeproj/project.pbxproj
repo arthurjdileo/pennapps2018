@@ -17,6 +17,7 @@
 		370BB03721435CDE00621413 /* ResSaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BB03621435CDE00621413 /* ResSaveTests.swift */; };
 		370BB04221435CDE00621413 /* ResSaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370BB04121435CDE00621413 /* ResSaveUITests.swift */; };
 		BD32A79B2144122E00A19F4B /* MedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD32A79A2144122E00A19F4B /* MedViewController.swift */; };
+		BD46B59A214450B900A45B81 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = BD46B599214450B800A45B81 /* white.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		370BB04121435CDE00621413 /* ResSaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResSaveUITests.swift; sourceTree = "<group>"; };
 		370BB04321435CDE00621413 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD32A79A2144122E00A19F4B /* MedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedViewController.swift; sourceTree = "<group>"; };
+		BD46B599214450B800A45B81 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				370BB01D21435CDD00621413 /* AppDelegate.swift */,
 				370BB01F21435CDD00621413 /* RootViewController.swift */,
 				370BB02121435CDD00621413 /* DataViewController.swift */,
+				BD46B599214450B800A45B81 /* white.png */,
 				370BB02321435CDD00621413 /* ModelController.swift */,
 				370BB02521435CDD00621413 /* Main.storyboard */,
 				370BB02821435CDE00621413 /* Assets.xcassets */,
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				370BB02C21435CDE00621413 /* LaunchScreen.storyboard in Resources */,
+				BD46B59A214450B900A45B81 /* white.png in Resources */,
 				370BB02921435CDE00621413 /* Assets.xcassets in Resources */,
 				370BB02721435CDD00621413 /* Main.storyboard in Resources */,
 			);

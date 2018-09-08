@@ -44,11 +44,11 @@ class MedViewController: UIViewController {
         
         
         var bdatstring = bdat.text
-        Userdef.set(namestring!, forKey: "bdat")
+        Userdef.set(bdatstring!, forKey: "bdat")
         
         
         var condstring = cond.text
-        Userdef.set(namestring!, forKey: "cond")
+        Userdef.set(condstring, forKey: "cond")
         
         
         var notesstring = notes.text
