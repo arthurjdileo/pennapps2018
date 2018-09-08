@@ -10,10 +10,15 @@ import UIKit
 
 class DataViewController: UIViewController {
 
+    @IBOutlet var medview: UIView!
     @IBOutlet weak var dataLabel: UILabel!
     var dataObject: String = ""
 
 
+    @IBOutlet weak var pressed: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

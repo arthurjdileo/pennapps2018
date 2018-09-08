@@ -28,6 +28,7 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, CLLoca
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
