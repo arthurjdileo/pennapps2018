@@ -19,6 +19,8 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, CLLoca
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
+            
+            
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
@@ -28,16 +30,29 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, CLLoca
     
     
     override func viewDidLoad() {
+        
+        determineMyCurrentLocation();
+        
+        
         super.viewDidLoad()
         
         //Load crap
-        determineMyCurrentLocation();
+        
         var loc = locationManager.location?.coordinate
+        while(loc == nil)
+        {
+            locationManager.requestAlwaysAuthorization()
+            var loc = locationManager.location?.coordinate
+        }
+        
+         loc = locationManager.location?.coordinate
         Userdef.set(loc!.latitude, forKey: "gplat")
         Userdef.set(loc!.longitude, forKey: "gplog")
         print(Userdef.object(forKey: "gplat")!)
         print(Userdef.object(forKey: "gplog")!)
         Userdef.synchronize()
+        
+        
         
         
         self.pageViewController = UIPageViewController(transitionStyle: .pageCurl, navigationOrientation: .horizontal, options: nil)
