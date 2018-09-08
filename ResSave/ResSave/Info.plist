@@ -4,6 +4,8 @@
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Create points which can help you</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Get Location</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>SAVES PHOTOS</string>
 	<key>CFBundleDevelopmentRegion</key>
