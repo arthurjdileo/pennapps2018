@@ -47,6 +47,9 @@
                                 <state key="normal" title="Panic">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="executePanic:" destination="t7z-ui-5Y3" eventType="touchUpInside" id="eSc-og-itF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aP8-Jb-a3q">
                                 <rect key="frame" x="104" y="493" width="166" height="30"/>
@@ -54,6 +57,9 @@
                                 <state key="normal" title="Edit Medical Information">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="EmY-Yz-8B3" kind="show" id="SNB-qr-x7Q"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAH-MA-xga">
                                 <rect key="frame" x="154" y="524" width="67" height="30"/>
@@ -68,6 +74,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmD-Rr-ZGN" sceneMemberID="firstResponder"/>
+                <exit id="t7z-ui-5Y3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="596" y="-243.32833583208398"/>
         </scene>
@@ -175,4 +182,7 @@
             <point key="canvasLocation" x="1277.5999999999999" y="-243.32833583208398"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="SNB-qr-x7Q"/>
+    </inferredMetricsTieBreakers>
 </document>
