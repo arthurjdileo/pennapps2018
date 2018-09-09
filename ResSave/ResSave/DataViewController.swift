@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class DataViewController: UIViewController {
     var ui = UIImage()
@@ -89,10 +90,28 @@ class DataViewController: UIViewController {
         let excludedActivities = [UIActivity.ActivityType.postToFlickr, UIActivity.ActivityType.postToVimeo, UIActivity.ActivityType.postToWeibo, UIActivity.ActivityType.postToTwitter, UIActivity.ActivityType.postToFacebook, UIActivity.ActivityType.addToReadingList, UIActivity.ActivityType.copyToPasteboard, UIActivity.ActivityType.mail, UIActivity.ActivityType.message, UIActivity.ActivityType.openInIBooks, ]
         activity.excludedActivityTypes = excludedActivities
         present(activity, animated: true, completion: nil)
-    }
-    
-    
-
-    
+        let mapSnapshotOptions = MKMapSnapshotter.Options()
+        
+        let location = CLLocationCoordinate2DMake(lat as! CLLocationDegrees, log as! CLLocationDegrees)
+        let region = MKCoordinateRegion(center: location, latitudinalMeters: 1000, longitudinalMeters: 1000)
+        mapSnapshotOptions.region = region
+        mapSnapshotOptions.scale = UIScreen.main.scale
+        mapSnapshotOptions.size = CGSize(width:100, height:100)
+        mapSnapshotOptions.showsBuildings = false
+        mapSnapshotOptions.showsPointsOfInterest = false
+        
+        let snapShotter = MKMapSnapshotter(options: mapSnapshotOptions)
+        
+        snapShotter.start { (snapshot, error) in
+            if let error = error {
+                fatalError(error.localizedDescription)
+            }
+            
+            var mapimg = snapshot?.image
+            let mapData = mapimg?.pngData()
+            UserDefaults.standard.set(mapData, forKey: "map")
+            UserDefaults.standard.synchronize()
+        }
 }
 
+}
