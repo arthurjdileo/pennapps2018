@@ -74,7 +74,7 @@ class DataViewController: UIViewController {
         // \n Latitude: \(lat) \n Longitude \(log) \n Height: \(hei) \n Weight: \(wei) Condition(s): \(cond)
     
     
-    lazy var testimage = textToImage(drawText: "Name: \(name)\n Birthday: \(bdat) \n Latitude: \(lat)\n Longitude: \(log) \nHeight: \(hei) \n Weight: \(wei)\n Condition(s): \(cond)\n Allergies & Reactions: \(aller)\n Medical Notes: \(notes)" as NSString, inImage: UIImage(named: "white.png")!, atPoint: CGPoint(x:1,y:90))
+    
 
     
 
@@ -114,23 +114,26 @@ class DataViewController: UIViewController {
             
             var mapimg = snapshot?.image
             let mapData = mapimg?.pngData()
+            let mapnewimg = UIImage(data: mapData!)
             UserDefaults.standard.set(mapData, forKey: "map")
             UserDefaults.standard.synchronize()
             
             var bottomImage = UIImage(named: "white.png")
-            var topImage = newprofile
-            
+            var topImage = mapnewimg
+            var another = newprofile
+
             var size = CGSize(width: 500, height: 500)
             UIGraphicsBeginImageContext(size)
             
             let areaSize = CGRect(x: 0, y: 0, width: size.width, height: size.height)
             bottomImage!.draw(in: areaSize)
-            
-            topImage!.draw(in: areaSize, blendMode: .normal, alpha: 0.8)
+            another!.draw(in: CGRect(x:300, y:300, width: 200, height: 200), blendMode: .normal, alpha: 0.8)
+            topImage!.draw(in: CGRect(x:0, y:300, width: 200, height: 200), blendMode: .normal, alpha: 0.8)
             
             var newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
-        let test = [newImage]
+            var testimage = self.textToImage(drawText: "Name: \(self.name)\n Birthday: \(self.bdat) \n Latitude: \(self.lat)\n Longitude: \(self.log) \nHeight: \(self.hei) \n Weight: \(self.wei)\n Condition(s): \(self.cond)\n Allergies & Reactions: \(self.aller)\n Medical Notes: \(self.notes)" as NSString, inImage: newImage, atPoint: CGPoint(x:1,y:75))
+        let test = [testimage]
         let activity = UIActivityViewController(activityItems: test, applicationActivities: nil)
         let excludedActivities = [UIActivity.ActivityType.postToFlickr, UIActivity.ActivityType.postToVimeo, UIActivity.ActivityType.postToWeibo, UIActivity.ActivityType.postToTwitter, UIActivity.ActivityType.postToFacebook, UIActivity.ActivityType.addToReadingList, UIActivity.ActivityType.copyToPasteboard, UIActivity.ActivityType.mail, UIActivity.ActivityType.message, UIActivity.ActivityType.openInIBooks, ]
         activity.excludedActivityTypes = excludedActivities
