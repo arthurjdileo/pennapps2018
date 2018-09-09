@@ -62,7 +62,7 @@ class DataViewController: UIViewController {
         // \n Latitude: \(lat) \n Longitude \(log) \n Height: \(hei) \n Weight: \(wei) Condition(s): \(cond)
     
     
-    lazy var testimage = textToImage(drawText: "Name: \(name)\n Birth Year: \(bdat) \n Latitude: \(lat)\n Longitude: \(log) \nHeight: \(hei) \n Weight: \(wei)\n Condition(s): \(cond)" as NSString, inImage: UIImage(named: "white.png")!, atPoint: CGPoint(x:1,y:1))
+    lazy var testimage = textToImage(drawText: "Name: \(name)\n Birthday: \(bdat) \n Latitude: \(lat)\n Longitude: \(log) \nHeight: \(hei) \n Weight: \(wei)\n Condition(s): \(cond)\n Allergies & Reactions: \(aller)\n Medical Notes: \(notes)" as NSString, inImage: UIImage(named: "white.png")!, atPoint: CGPoint(x:1,y:1))
 
     
 
