@@ -26,6 +26,7 @@ extension MedViewController: UIImagePickerControllerDelegate, UINavigationContro
             return
         }
         imageView.image = image
+//        Userdef.set()
         
         dismiss(animated: true, completion: nil)
     }
@@ -42,7 +43,7 @@ class MedViewController: UIViewController {
     @IBOutlet weak var med: UITextField!
     @IBOutlet weak var wei: UITextField!
     @IBOutlet weak var hei: UITextField!
-    var allow = true
+    var allow = false
     
 
     @IBOutlet var imageView: UIImageView!
@@ -114,8 +115,15 @@ class MedViewController: UIViewController {
             Userdef.set(heistring!, forKey: "hei")}
         
         if (namestring=="" || bdatstring=="" || condstring=="" || notesstring=="" || allerstring=="" || medstring=="" || weistring=="" || heistring=="") {
+
                 allow = false
+            print("entered")
+
         } else {
+            allow = true
+            if(allow == true) {
+                self.performSegue(withIdentifier: "hi", sender: self)
+            }
             Userdef.synchronize()
             allow = true
             if allow == true {
