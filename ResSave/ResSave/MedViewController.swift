@@ -21,6 +21,7 @@ extension UIViewController {
 }
 
 
+
 class MedViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     let Userdef = UserDefaults.standard
     @IBOutlet weak var name: UITextField!
@@ -32,77 +33,74 @@ class MedViewController: UIViewController, UINavigationControllerDelegate, UIIma
     @IBOutlet weak var med: UITextField!
     @IBOutlet weak var wei: UITextField!
     @IBOutlet weak var hei: UITextField!
-    @IBOutlet weak var imgView: UIImageView!
-    @IBOutlet weak var uploadPictureBtn: UIButton!
+    var allow = true
     
 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var chooseBuuton: UIButton!
     var imagePicker = UIImagePickerController()
     
-    @IBAction func btnClicked() {
-        
-        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
-            print("Button capture")
-            
-            imagePicker.delegate = self
-            imagePicker.sourceType = .savedPhotosAlbum;
-            imagePicker.allowsEditing = false
-            
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-    }
-    
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
-        self.dismiss(animated: true, completion: { () -> Void in
-            
-        })
-        
-        imageView.image = image
+
+    @IBAction func onClickPickImage(_ sender: Any) {
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        imagePicker.delegate = self
     }
     
     @IBAction func subbed(_ sender: Any) {
         var namestring = name.text
-        Userdef.set(namestring!, forKey: "name")
+        if namestring != nil {
+            Userdef.set(namestring!, forKey: "name")}
         
         
         var bdatstring = bdat.text
-        Userdef.set(bdatstring!, forKey: "bdat")
+        if bdatstring != nil {
+            Userdef.set(bdatstring!, forKey: "bdat")}
         
         
         var condstring = cond.text
-        Userdef.set(condstring, forKey: "cond")
+        if condstring != nil{
+            Userdef.set(condstring, forKey: "cond")}
         
         
         var notesstring = notes.text
-        Userdef.set(notesstring!, forKey: "notes")
+        if notesstring != nil{
+            Userdef.set(notesstring!, forKey: "notes")}
         
         
         var allerstring = aller.text
-        Userdef.set(allerstring!, forKey: "aller")
+        if allerstring != nil {
+            Userdef.set(allerstring!, forKey: "aller")}
         
         
         var medstring = med.text
-        Userdef.set(medstring!, forKey: "med")
+        if medstring != nil {
+            Userdef.set(medstring!, forKey: "med")}
         
         
         var weistring = wei.text
-        Userdef.set(weistring!, forKey: "wei")
+        if weistring != nil {
+            Userdef.set(weistring!, forKey: "wei")}
         
         
         var heistring = hei.text
-        Userdef.set(heistring!, forKey: "hei")
+        if heistring != nil {
+            Userdef.set(heistring!, forKey: "hei")}
+        
+        if (namestring=="" || bdatstring=="" || condstring=="" || notesstring=="" || allerstring=="" || medstring=="" || weistring=="" || heistring=="") {
+                allow = false
+        } else {
+            Userdef.synchronize()
+            print(Userdef.string(forKey: "name")!)
+        }
         
         
-        
-        
-        Userdef.synchronize()
-        print(Userdef.string(forKey: "name")!)
     }
 
 

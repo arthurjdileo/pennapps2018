@@ -41,10 +41,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYu-ns-nPF">
-                                <rect key="frame" x="95" y="279" width="184" height="109"/>
+                                <rect key="frame" x="108" y="279" width="159" height="109"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="81"/>
-                                <state key="normal" title="Panic">
+                                <state key="normal" title="Alert">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -100,8 +100,9 @@
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="onClickPickImage:" destination="EmY-Yz-8B3" eventType="touchUpInside" id="2zO-97-gKq"/>
                                     <action selector="subbed:" destination="EmY-Yz-8B3" eventType="primaryActionTriggered" id="NVf-z6-rzm"/>
-                                    <segue destination="S4R-Ja-viH" kind="show" id="pFh-zp-DXj"/>
+                                    <segue destination="S4R-Ja-viH" kind="show" id="NqP-Xu-v8V"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthday (yyyy)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rI5-Gt-4h9">
@@ -166,6 +167,7 @@
                                 <state key="normal" title="Upload Picture"/>
                                 <connections>
                                     <action selector="btnClicked" destination="EmY-Yz-8B3" eventType="touchUpInside" id="ROp-lE-9hg"/>
+                                    <action selector="uploadPicture:" destination="EmY-Yz-8B3" eventType="touchUpInside" id="ynZ-Gq-SMg"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k8v-H7-rvS">
@@ -197,6 +199,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pFh-zp-DXj"/>
+        <segue reference="NqP-Xu-v8V"/>
     </inferredMetricsTieBreakers>
 </document>

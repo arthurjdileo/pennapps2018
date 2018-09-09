@@ -4,12 +4,12 @@
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Create points which can help you</string>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>Get Location</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Get Location</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>SAVES PHOTOS</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>App requires access to photos</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>App requires access to photos</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -20,6 +20,8 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app wants to access your camera</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
