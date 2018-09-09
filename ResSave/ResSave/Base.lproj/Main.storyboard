@@ -73,7 +73,7 @@
                         <viewLayoutGuide key="safeArea" id="K9I-jD-KjA"/>
                     </view>
                     <connections>
-                        <outlet property="editMediInfo" destination="aP8-Jb-a3q" id="CEo-iJ-tAn"/>
+                        <outlet property="editMediInfo" destination="aP8-Jb-a3q" id="OY1-no-D92"/>
                         <outlet property="panic" destination="UYu-ns-nPF" id="sWb-Jk-p1v"/>
                         <outlet property="viewMap" destination="dAH-MA-xga" id="l0n-3Z-1kX"/>
                     </connections>
@@ -191,6 +191,7 @@
                         <outlet property="med" destination="OFb-5Z-Ss2" id="ewT-vB-9bL"/>
                         <outlet property="name" destination="KZO-eN-3eA" id="PPb-sV-hOa"/>
                         <outlet property="notes" destination="hUn-qA-EEK" id="0bf-ZH-195"/>
+                        <outlet property="sub" destination="4s7-h6-8cX" id="b3j-Re-Xop"/>
                         <outlet property="view" destination="4s7-h6-8cX" id="9Fk-jj-AKe"/>
                         <outlet property="wei" destination="suc-7Y-bfT" id="QUq-I5-hHY"/>
                     </connections>

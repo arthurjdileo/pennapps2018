@@ -14,6 +14,13 @@ let Userdef = UserDefaults.standard
 class RootViewController: UIViewController, UIPageViewControllerDelegate, CLLocationManagerDelegate {
     var locationManager:CLLocationManager!
     var pageViewController: UIPageViewController?
+    func isLocationServiceAvailable() -> Bool {
+        
+        if (CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways) {
+            return true;
+        }
+        return false;
+    }
     func determineMyCurrentLocation() {
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -25,8 +32,11 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, CLLoca
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
             locationManager.startUpdatingHeading()
+        } else{
+            determineMyCurrentLocation()
         }
     }
+
     
     
     override func viewDidLoad() {
