@@ -60,6 +60,17 @@ class MedViewController: UIViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         imagePicker.delegate = self
+        
+        if Userdef.string(forKey: "name") != nil{
+            name.text = Userdef.string(forKey: "name")
+            bdat.text = Userdef.string(forKey: "bdat")
+            cond.text = Userdef.string(forKey: "cond")
+            notes.text = Userdef.string(forKey: "notes")
+            aller.text = Userdef.string(forKey: "aller")
+            med.text = Userdef.string(forKey: "med")
+            wei.text = Userdef.string(forKey: "wei")
+            hei.text = Userdef.string(forKey: "hei")
+        }
     }
     
     @IBAction func subbed(_ sender: Any) {
