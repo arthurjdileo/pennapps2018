@@ -8,6 +8,8 @@
     <string>Get Location</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>SAVES PHOTOS</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>App requires access to photos</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

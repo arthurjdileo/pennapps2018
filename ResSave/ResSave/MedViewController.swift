@@ -19,7 +19,9 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
-class MedViewController: UIViewController {
+
+
+class MedViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     let Userdef = UserDefaults.standard
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var bdat: UITextField!
@@ -30,12 +32,38 @@ class MedViewController: UIViewController {
     @IBOutlet weak var med: UITextField!
     @IBOutlet weak var wei: UITextField!
     @IBOutlet weak var hei: UITextField!
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var uploadPictureBtn: UIButton!
     
+
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var chooseBuuton: UIButton!
+    var imagePicker = UIImagePickerController()
+    
+    @IBAction func btnClicked() {
+        
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            print("Button capture")
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType = .savedPhotosAlbum;
+            imagePicker.allowsEditing = false
+            
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+        self.dismiss(animated: true, completion: { () -> Void in
+            
+        })
+        
+        imageView.image = image
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-
     }
     
     @IBAction func subbed(_ sender: Any) {
@@ -76,15 +104,6 @@ class MedViewController: UIViewController {
         Userdef.synchronize()
         print(Userdef.string(forKey: "name")!)
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
