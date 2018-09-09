@@ -86,21 +86,13 @@ class DataViewController: UIViewController {
         super.viewDidLoad()
         let newprofile = UIImage(data: Userdef.object(forKey: "profile") as! Data)
         
-      
-//        " Name: \(name) Lat/Long \(lat) \(log) H/W \(hei) \(wei) Condition(s): \(cond)"
-//\n\n Birth Year: \(bdat)\n\n Lat: \(lat)\n\n Long: \(log)\n\n Height: \(hei)\n\n Weight: \(wei)\n\n Condition(s): \(cond) \n\n Allergies: \(aller) \n\n Misc: \(notes)"
-        let test = [testimage]
-        let activity = UIActivityViewController(activityItems: test, applicationActivities: nil)
-        let excludedActivities = [UIActivity.ActivityType.postToFlickr, UIActivity.ActivityType.postToVimeo, UIActivity.ActivityType.postToWeibo, UIActivity.ActivityType.postToTwitter, UIActivity.ActivityType.postToFacebook, UIActivity.ActivityType.addToReadingList, UIActivity.ActivityType.copyToPasteboard, UIActivity.ActivityType.mail, UIActivity.ActivityType.message, UIActivity.ActivityType.openInIBooks, ]
-        activity.excludedActivityTypes = excludedActivities
-        present(activity, animated: true, completion: nil)
         let mapSnapshotOptions = MKMapSnapshotter.Options()
         
         let location = CLLocationCoordinate2DMake(lat as! CLLocationDegrees, log as! CLLocationDegrees)
         let region = MKCoordinateRegion(center: location, latitudinalMeters: 1000, longitudinalMeters: 1000)
         mapSnapshotOptions.region = region
         mapSnapshotOptions.scale = UIScreen.main.scale
-        mapSnapshotOptions.size = CGSize(width:100, height:100)
+        mapSnapshotOptions.size = CGSize(width:200, height:200)
         mapSnapshotOptions.showsBuildings = false
         mapSnapshotOptions.showsPointsOfInterest = false
         
@@ -115,6 +107,26 @@ class DataViewController: UIViewController {
             let mapData = mapimg?.pngData()
             UserDefaults.standard.set(mapData, forKey: "map")
             UserDefaults.standard.synchronize()
+            
+            var bottomImage = UIImage(named: "white.png")
+            var topImage = newprofile
+            
+            var size = CGSize(width: 500, height: 500)
+            UIGraphicsBeginImageContext(size)
+            
+            let areaSize = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+            bottomImage!.draw(in: areaSize)
+            
+            topImage!.draw(in: areaSize, blendMode: .normal, alpha: 0.8)
+            
+            var newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+        let test = [newImage]
+        let activity = UIActivityViewController(activityItems: test, applicationActivities: nil)
+        let excludedActivities = [UIActivity.ActivityType.postToFlickr, UIActivity.ActivityType.postToVimeo, UIActivity.ActivityType.postToWeibo, UIActivity.ActivityType.postToTwitter, UIActivity.ActivityType.postToFacebook, UIActivity.ActivityType.addToReadingList, UIActivity.ActivityType.copyToPasteboard, UIActivity.ActivityType.mail, UIActivity.ActivityType.message, UIActivity.ActivityType.openInIBooks, ]
+        activity.excludedActivityTypes = excludedActivities
+        self.present(activity, animated: true, completion: nil)
+            
         }
 }
 

@@ -99,7 +99,7 @@
                                 </state>
                                 <connections>
                                     <action selector="subbed:" destination="EmY-Yz-8B3" eventType="primaryActionTriggered" id="NVf-z6-rzm"/>
-                                    <segue destination="S4R-Ja-viH" kind="show" identifier="hi" id="NqP-Xu-v8V"/>
+                                    <segue destination="S4R-Ja-viH" kind="show" id="6La-W1-QV5"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthday (yyyy)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rI5-Gt-4h9">
@@ -186,7 +186,6 @@
                         <outlet property="notes" destination="hUn-qA-EEK" id="0bf-ZH-195"/>
                         <outlet property="sub" destination="4s7-h6-8cX" id="yTt-xM-jIL"/>
                         <outlet property="wei" destination="suc-7Y-bfT" id="QUq-I5-hHY"/>
-                        <segue destination="S4R-Ja-viH" kind="custom" identifier="medToMain" id="2Ex-qg-vgA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WZe-i7-BOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -195,6 +194,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2Ex-qg-vgA"/>
+        <segue reference="6La-W1-QV5"/>
     </inferredMetricsTieBreakers>
 </document>

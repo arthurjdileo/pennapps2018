@@ -27,7 +27,7 @@ extension MedViewController: UIImagePickerControllerDelegate, UINavigationContro
         }
         imageView.image = image
         let imageData = image.pngData()
-        Userdef.set(imageData, forKey: "profile")
+
         Userdef.synchronize()
        
         dismiss(animated: true, completion: nil)
@@ -73,7 +73,7 @@ class MedViewController: UIViewController {
             med.text = Userdef.string(forKey: "med")
             wei.text = Userdef.string(forKey: "wei")
             hei.text = Userdef.string(forKey: "hei")
-            
+            imageView.image = Userdef.object(forKey: "profile") as! UIImage
         }
     }
     
@@ -123,15 +123,8 @@ class MedViewController: UIViewController {
             print("entered")
 
         } else {
-            allow = true
-            if(allow == true) {
-                self.performSegue(withIdentifier: "hi", sender: self)
-            }
             Userdef.synchronize()
-            allow = true
-            if allow == true {
-                self.performSegue(withIdentifier: "medToMain", sender: self)
-            }
+        
             print(Userdef.string(forKey: "name")!)
         }
         
