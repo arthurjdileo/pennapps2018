@@ -9,6 +9,15 @@
 import UIKit
 import MapKit
 
+extension UIImage {
+    func resized(toWidth width: CGFloat) -> UIImage? {
+        let canvasSize = CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))
+        UIGraphicsBeginImageContextWithOptions(canvasSize, false, scale)
+        defer { UIGraphicsEndImageContext() }
+        draw(in: CGRect(origin: .zero, size: canvasSize))
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
+}
 class DataViewController: UIViewController {
     var ui = UIImage()
     let Userdef = UserDefaults.standard
@@ -84,7 +93,7 @@ class DataViewController: UIViewController {
 
     @IBAction func execPanic(_ sender: Any) {
         super.viewDidLoad()
-        let newprofile = UIImage(data: Userdef.object(forKey: "profile") as! Data)
+        let newprofile = UIImage(data: Userdef.object(forKey: "profile") as! Data)?.resized(toWidth: 100)
         
         let mapSnapshotOptions = MKMapSnapshotter.Options()
         
