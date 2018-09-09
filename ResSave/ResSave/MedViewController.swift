@@ -115,9 +115,12 @@ class MedViewController: UIViewController {
         
         if (namestring=="" || bdatstring=="" || condstring=="" || notesstring=="" || allerstring=="" || medstring=="" || weistring=="" || heistring=="") {
                 allow = false
-            print("entered")
         } else {
             Userdef.synchronize()
+            allow = true
+            if allow == true {
+                self.performSegue(withIdentifier: "medToMain", sender: self)
+            }
             print(Userdef.string(forKey: "name")!)
         }
         

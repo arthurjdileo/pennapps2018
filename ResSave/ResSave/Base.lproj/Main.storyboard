@@ -58,7 +58,7 @@
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="EmY-Yz-8B3" kind="show" id="d6j-A7-dcv"/>
+                                    <segue destination="EmY-Yz-8B3" kind="show" id="3xv-tQ-5vn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAH-MA-xga">
@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmD-Rr-ZGN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="596" y="-243.32833583208398"/>
+            <point key="canvasLocation" x="559" y="-243"/>
         </scene>
         <!--Med View Controller-->
         <scene sceneID="ltU-nc-cf4">
@@ -100,13 +100,13 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4s7-h6-8cX">
                                 <rect key="frame" x="144" y="598" width="87" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="MedToMain"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="SUBMIT">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="subbed:" destination="EmY-Yz-8B3" eventType="primaryActionTriggered" id="NVf-z6-rzm"/>
-                                    <segue destination="S4R-Ja-viH" kind="show" id="NqP-Xu-v8V"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthday (yyyy)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rI5-Gt-4h9">
@@ -191,16 +191,17 @@
                         <outlet property="med" destination="OFb-5Z-Ss2" id="ewT-vB-9bL"/>
                         <outlet property="name" destination="KZO-eN-3eA" id="PPb-sV-hOa"/>
                         <outlet property="notes" destination="hUn-qA-EEK" id="0bf-ZH-195"/>
-                        <outlet property="sub" destination="4s7-h6-8cX" id="Sa0-qH-WWK"/>
+                        <outlet property="sub" destination="4s7-h6-8cX" id="yTt-xM-jIL"/>
                         <outlet property="wei" destination="suc-7Y-bfT" id="QUq-I5-hHY"/>
+                        <segue destination="S4R-Ja-viH" kind="custom" identifier="medToMain" id="2Ex-qg-vgA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WZe-i7-BOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1277.5999999999999" y="-243.32833583208398"/>
+            <point key="canvasLocation" x="1271" y="-251"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NqP-Xu-v8V"/>
+        <segue reference="2Ex-qg-vgA"/>
     </inferredMetricsTieBreakers>
 </document>
