@@ -12,13 +12,12 @@ class DataViewController: UIViewController {
     var ui = UIImage()
     let Userdef = UserDefaults.standard
     
-    @IBOutlet var medview: UIView!
-    @IBOutlet weak var dataLabel: UILabel!
-    var dataObject: String = ""
-
+    @IBOutlet weak var editMediInfo: UIButton!
+    @IBOutlet weak var viewMap: UIButton!
+    
+    var dataObject = ""
     @IBOutlet weak var panic: UIButton!
     
-    @IBOutlet weak var pressed: UIButton!
     lazy var name = Userdef.string(forKey: "name")!
     lazy var lat = Userdef.object(forKey: "gplat")!
     lazy var log = Userdef.object(forKey: "gplog")!
@@ -81,10 +80,7 @@ class DataViewController: UIViewController {
 
     @IBAction func execPanic(_ sender: Any) {
         super.viewDidLoad()
-        
-        
-       
-       
+
       
 //        " Name: \(name) Lat/Long \(lat) \(log) H/W \(hei) \(wei) Condition(s): \(cond)"
 //\n\n Birth Year: \(bdat)\n\n Lat: \(lat)\n\n Long: \(log)\n\n Height: \(hei)\n\n Weight: \(wei)\n\n Condition(s): \(cond) \n\n Allergies: \(aller) \n\n Misc: \(notes)"

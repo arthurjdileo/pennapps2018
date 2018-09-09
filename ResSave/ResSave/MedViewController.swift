@@ -20,9 +20,18 @@ extension UIViewController {
     }
 }
 
+extension MedViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.originalImage] as? UIImage else {
+            return
+        }
+        imageView.image = image
+        
+        dismiss(animated: true, completion: nil)
+    }
+}
 
-
-class MedViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class MedViewController: UIViewController {
     let Userdef = UserDefaults.standard
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var bdat: UITextField!
@@ -95,6 +104,7 @@ class MedViewController: UIViewController, UINavigationControllerDelegate, UIIma
         
         if (namestring=="" || bdatstring=="" || condstring=="" || notesstring=="" || allerstring=="" || medstring=="" || weistring=="" || heistring=="") {
                 allow = false
+            print("entered")
         } else {
             Userdef.synchronize()
             print(Userdef.string(forKey: "name")!)

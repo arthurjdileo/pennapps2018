@@ -58,7 +58,7 @@
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="EmY-Yz-8B3" kind="show" id="SNB-qr-x7Q"/>
+                                    <segue destination="EmY-Yz-8B3" kind="show" id="wzl-UC-DK4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAH-MA-xga">
@@ -72,6 +72,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="K9I-jD-KjA"/>
                     </view>
+                    <connections>
+                        <outlet property="editMediInfo" destination="aP8-Jb-a3q" id="CEo-iJ-tAn"/>
+                        <outlet property="panic" destination="UYu-ns-nPF" id="sWb-Jk-p1v"/>
+                        <outlet property="viewMap" destination="dAH-MA-xga" id="l0n-3Z-1kX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmD-Rr-ZGN" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,7 +105,6 @@
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="onClickPickImage:" destination="EmY-Yz-8B3" eventType="touchUpInside" id="2zO-97-gKq"/>
                                     <action selector="subbed:" destination="EmY-Yz-8B3" eventType="primaryActionTriggered" id="NVf-z6-rzm"/>
                                     <segue destination="S4R-Ja-viH" kind="show" id="NqP-Xu-v8V"/>
                                 </connections>
@@ -166,8 +170,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Upload Picture"/>
                                 <connections>
-                                    <action selector="btnClicked" destination="EmY-Yz-8B3" eventType="touchUpInside" id="ROp-lE-9hg"/>
-                                    <action selector="uploadPicture:" destination="EmY-Yz-8B3" eventType="touchUpInside" id="ynZ-Gq-SMg"/>
+                                    <action selector="onClickPickImage:" destination="EmY-Yz-8B3" eventType="primaryActionTriggered" id="4mq-rS-4dy"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k8v-H7-rvS">
@@ -188,8 +191,7 @@
                         <outlet property="med" destination="OFb-5Z-Ss2" id="ewT-vB-9bL"/>
                         <outlet property="name" destination="KZO-eN-3eA" id="PPb-sV-hOa"/>
                         <outlet property="notes" destination="hUn-qA-EEK" id="0bf-ZH-195"/>
-                        <outlet property="sub" destination="4s7-h6-8cX" id="UbA-uE-ExJ"/>
-                        <outlet property="view" destination="k8v-H7-rvS" id="xvW-lJ-fyt"/>
+                        <outlet property="view" destination="4s7-h6-8cX" id="9Fk-jj-AKe"/>
                         <outlet property="wei" destination="suc-7Y-bfT" id="QUq-I5-hHY"/>
                     </connections>
                 </viewController>
@@ -199,6 +201,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NqP-Xu-v8V"/>
+        <segue reference="wzl-UC-DK4"/>
     </inferredMetricsTieBreakers>
 </document>
