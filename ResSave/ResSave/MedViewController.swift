@@ -27,7 +27,7 @@ extension MedViewController: UIImagePickerControllerDelegate, UINavigationContro
         }
         imageView.image = image
         let imageData = image.pngData()
-
+        Userdef.set(imageData, forKey: "profile")
         Userdef.synchronize()
        
         dismiss(animated: true, completion: nil)
@@ -73,7 +73,7 @@ class MedViewController: UIViewController {
             med.text = Userdef.string(forKey: "med")
             wei.text = Userdef.string(forKey: "wei")
             hei.text = Userdef.string(forKey: "hei")
-            //imageView.image = Userdef.object(forKey: "profile") as! UIImage
+            imageView.image = Userdef.object(forKey: "profile") as? UIImage
         }
     }
     
