@@ -30,6 +30,8 @@ class DataViewController: UIViewController {
     lazy var wei = Userdef.string(forKey: "wei")!
     lazy var hei = Userdef.string(forKey: "hei")!
     
+    
+    
     func textToImage(drawText text: NSString, inImage image: UIImage, atPoint point: CGPoint) -> UIImage {
         
         
@@ -72,6 +74,7 @@ class DataViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -81,7 +84,8 @@ class DataViewController: UIViewController {
 
     @IBAction func execPanic(_ sender: Any) {
         super.viewDidLoad()
-
+        let newprofile = UIImage(data: Userdef.object(forKey: "profile") as! Data)
+        
       
 //        " Name: \(name) Lat/Long \(lat) \(log) H/W \(hei) \(wei) Condition(s): \(cond)"
 //\n\n Birth Year: \(bdat)\n\n Lat: \(lat)\n\n Long: \(log)\n\n Height: \(hei)\n\n Weight: \(wei)\n\n Condition(s): \(cond) \n\n Allergies: \(aller) \n\n Misc: \(notes)"
