@@ -32,7 +32,7 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, CLLoca
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
             locationManager.startUpdatingHeading()
-        } else{
+        } else {
             determineMyCurrentLocation()
         }
     }
